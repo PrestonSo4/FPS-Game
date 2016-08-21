@@ -105,6 +105,7 @@ GameObject:
   - 95: {fileID: 9504178}
   - 114: {fileID: 11499124}
   - 114: {fileID: 11450446}
+  - 114: {fileID: 114000010676275804}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -793,8 +794,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   lookSensitivity: 3
-  thrusterForce: 1300
-  thrusterFuelBurnSpeed: 1
+  thrusterForce: 1400
+  thrusterFuelBurnSpeed: 0.7
   thrusterFuelRegenSpeed: 0.3
   environmentMask:
     serializedVersion: 2
@@ -8305,6 +8306,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 120524}
   m_IsPrefabParent: 1
+--- !u!114 &114000010676275804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8ef0895f3eeaa4fa7fd69cbc177940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000011070248646
 MonoBehaviour:
   m_ObjectHideFlags: 1
