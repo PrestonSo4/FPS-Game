@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fps Game P&PGames.CSharp.Plugins", "fps Game P&PGames.CSharp.Plugins.csproj", "{83BD2CE2-7CBB-0B30-135A-004C887C2064}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fps Game P&PGames.CSharp", "fps Game P&PGames.CSharp.csproj", "{AD0905A8-EAAF-7E3E-CFAC-D9F2B6A1BE5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fps Game P&PGames.CSharp.Editor", "fps Game P&PGames.CSharp.Editor.csproj", "{119BC828-0E5F-C146-0539-0E02217BF3FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83BD2CE2-7CBB-0B30-135A-004C887C2064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83BD2CE2-7CBB-0B30-135A-004C887C2064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83BD2CE2-7CBB-0B30-135A-004C887C2064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83BD2CE2-7CBB-0B30-135A-004C887C2064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD0905A8-EAAF-7E3E-CFAC-D9F2B6A1BE5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD0905A8-EAAF-7E3E-CFAC-D9F2B6A1BE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD0905A8-EAAF-7E3E-CFAC-D9F2B6A1BE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD0905A8-EAAF-7E3E-CFAC-D9F2B6A1BE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{119BC828-0E5F-C146-0539-0E02217BF3FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119BC828-0E5F-C146-0539-0E02217BF3FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119BC828-0E5F-C146-0539-0E02217BF3FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119BC828-0E5F-C146-0539-0E02217BF3FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
