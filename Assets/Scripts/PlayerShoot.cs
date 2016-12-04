@@ -33,6 +33,15 @@ public class PlayerShoot : NetworkBehaviour {
 		if (PauseMenu.IsOn)
 			return;
 
+        if(currentWeapon.bullets < currentWeapon.maxBullets)
+        {
+            if (Input.GetButtonDown("Reload"))
+            {
+                weaponManager.Reload();
+                return;
+            }
+        }
+
 		if (currentWeapon.fireRate <= 0f)
 		{
 			if (Input.GetButtonDown("Fire1"))
@@ -49,6 +58,9 @@ public class PlayerShoot : NetworkBehaviour {
 				CancelInvoke("Shoot");
 			}
 		}
+
+
+
 	}
 
 	//Is called on the server when a player shoots
@@ -86,10 +98,20 @@ public class PlayerShoot : NetworkBehaviour {
 	[Client]
 	void Shoot ()
 	{
-		if (!isLocalPlayer)
+		if (!isLocalPlayer && weaponManager.isReloading)
 		{
 			return;
 		}
+
+        if(currentWeapon.bullets <= 0)
+        {
+            weaponManager.Reload();
+            return;
+        }
+
+        currentWeapon.bullets--;
+
+        Debug.Log(currentWeapon.bullets);
 
 		//We are shooting, call the OnShoot method on the server
 		CmdOnShoot();

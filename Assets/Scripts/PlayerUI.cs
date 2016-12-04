@@ -1,18 +1,34 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour {
 
 	[SerializeField]
 	RectTransform thrusterFuelFill;
 
+    [SerializeField]
+    RectTransform healthbarFill;
+
 	[SerializeField]
 	GameObject pauseMenu;
 
-	private PlayerController controller;
+    [SerializeField]
+    GameObject scoreboard;
 
-	public void SetController (PlayerController _controller)
+    [SerializeField]
+    Text ammoText;
+
+    private Player player;
+
+	private PlayerController controller;
+    private WeaponManager weaponManager;
+
+
+	public void SetPlayer (Player _player)
 	{
-		controller = _controller;
+		player = _player;
+        controller = player.GetComponent<PlayerController>();
+        weaponManager = player.GetComponent<WeaponManager>();
 	}
 
 	void Start ()
@@ -24,13 +40,39 @@ public class PlayerUI : MonoBehaviour {
 	{
 		SetFuelAmount (controller.GetThrusterFuelAmount());
 
+        SetHealthAmount(player.GetHealthPct());
+
+        SetAmmAmount(weaponManager.GetCurrentWeapon().bullets);
+
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			TogglePauseMenu();
 		}
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            scoreboard.SetActive(true);
+        }
+        else if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            scoreboard.SetActive(false);
+        }
+        
+
 	}
 
-	void TogglePauseMenu ()
+    private void SetAmmAmount(int _amount)
+    {
+        ammoText.text = _amount.ToString();
+    }
+
+    private void SetHealthAmount(float _amount)
+    {
+        print(_amount);
+        healthbarFill.localScale = new Vector3(1f, _amount, 1f);
+    }
+
+    public void TogglePauseMenu ()
 	{
 		pauseMenu.SetActive(!pauseMenu.activeSelf);
 		PauseMenu.IsOn = pauseMenu.activeSelf;
@@ -38,7 +80,9 @@ public class PlayerUI : MonoBehaviour {
 
 	void SetFuelAmount (float _amount)
 	{
-		thrusterFuelFill.localScale = new Vector3(1f, _amount, 1f);
+        print(_amount);
+        thrusterFuelFill.localScale = new Vector3(1f, _amount, 1f);
+
 	}
 
 }
