@@ -75,8 +75,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraFacingBillboard.cs" />
     <Compile Include="Assets\DatabaseControl\Demos\CSharp Demo\Scripts\dcDemo_LoadingRotate_CSharp.cs" />
     <Compile Include="Assets\DatabaseControl\Demos\CSharp Demo\Scripts\dcDemo_MenuControl_CSharp.cs" />
+    <Compile Include="Assets\PlayerNamePlate.cs" />
     <Compile Include="Assets\Scripts\CursorState.cs" />
     <Compile Include="Assets\Scripts\DataTranslator.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
