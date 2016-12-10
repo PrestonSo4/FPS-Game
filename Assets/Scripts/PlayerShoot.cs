@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Collections;
 
 [RequireComponent (typeof (WeaponManager))]
 public class PlayerShoot : NetworkBehaviour {
@@ -14,7 +15,7 @@ public class PlayerShoot : NetworkBehaviour {
 
 	private PlayerWeapon currentWeapon;
 	private WeaponManager weaponManager;
-
+    Animation anim;
 	void Start ()
 	{
 		if (cam == null)
@@ -29,7 +30,6 @@ public class PlayerShoot : NetworkBehaviour {
 	void Update ()
 	{
 		currentWeapon = weaponManager.GetCurrentWeapon();
-
 		if (PauseMenu.IsOn)
 			return;
 
@@ -44,6 +44,7 @@ public class PlayerShoot : NetworkBehaviour {
 
 		if (currentWeapon.fireRate <= 0f)
 		{
+            
 			if (Input.GetButtonDown("Fire1"))
 			{
 				Shoot();
@@ -62,6 +63,7 @@ public class PlayerShoot : NetworkBehaviour {
 
 
 	}
+
 
 	//Is called on the server when a player shoots
 	[Command]

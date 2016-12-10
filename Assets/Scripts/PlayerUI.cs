@@ -23,8 +23,14 @@ public class PlayerUI : MonoBehaviour {
 	private PlayerController controller;
     private WeaponManager weaponManager;
 
+    //Options UI elements
+    [Header("Options Menu")]
+    [SerializeField]
+    Slider mouseSense;
+    [SerializeField]
+    Text amountText;
 
-	public void SetPlayer (Player _player)
+    public void SetPlayer (Player _player)
 	{
 		player = _player;
         controller = player.GetComponent<PlayerController>();
@@ -57,9 +63,14 @@ public class PlayerUI : MonoBehaviour {
         {
             scoreboard.SetActive(false);
         }
-        
 
-	}
+        if (mouseSense != null)
+        {
+            controller.lookSensitivity = mouseSense.value;
+            amountText.text = mouseSense.value.ToString();
+        }
+
+    }
 
     private void SetAmmAmount(int _amount)
     {

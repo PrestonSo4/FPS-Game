@@ -105,8 +105,8 @@ GameObject:
   - 95: {fileID: 9504178}
   - 114: {fileID: 11499124}
   - 114: {fileID: 11450446}
-  - 114: {fileID: 114000010676275804}
   - 114: {fileID: 114000013643330400}
+  - 114: {fileID: 114000012415907888}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -823,14 +823,24 @@ MonoBehaviour:
   weaponHolder: {fileID: 470462}
   primaryWeapon:
     name: Blaster
-    damage: 5
+    damage: 19
     range: 100
-    fireRate: 10
+    fireRate: 6.5
     maxBullets: 20
     bullets: 20
-    reloadTime: 1
+    reloadTime: 1.9
     graphics: {fileID: 199728, guid: ed705c92b28f65f4f99f5b76f9f51ecc, type: 2}
+  secondaryWeapon:
+    name: Glock
+    damage: 10
+    range: 80
+    fireRate: 0
+    maxBullets: 15
+    bullets: 20
+    reloadTime: 1
+    graphics: {fileID: 1000013161418402, guid: ba52f180ce5a99f44b77703b3240ca13, type: 2}
   isReloading: 0
+  isFired: 0
 --- !u!114 &11468604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8403,17 +8413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b915ea8586d7404f90b040935f9fade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114000010676275804
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d8ef0895f3eeaa4fa7fd69cbc177940, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114000010772920478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8569,6 +8568,17 @@ MonoBehaviour:
   jitter: 0.05
   showVelocity: 0
   showVelocityScale: 1
+--- !u!114 &114000012415907888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8ef0895f3eeaa4fa7fd69cbc177940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012537921880
 MonoBehaviour:
   m_ObjectHideFlags: 1
