@@ -93,20 +93,20 @@ GameObject:
   - 4: {fileID: 454064}
   - 135: {fileID: 13559400}
   - 54: {fileID: 5404622}
-  - 114: {fileID: 11428498}
-  - 114: {fileID: 11433214}
   - 114: {fileID: 11420026}
   - 114: {fileID: 11483786}
   - 114: {fileID: 11478292}
   - 114: {fileID: 11468604}
   - 153: {fileID: 15319452}
+  - 114: {fileID: 11499124}
+  - 95: {fileID: 9504178}
+  - 114: {fileID: 11428498}
+  - 114: {fileID: 11433214}
   - 114: {fileID: 11433114}
   - 114: {fileID: 11415700}
-  - 95: {fileID: 9504178}
-  - 114: {fileID: 11499124}
-  - 114: {fileID: 11450446}
   - 114: {fileID: 114000013643330400}
   - 114: {fileID: 114000012415907888}
+  - 114: {fileID: 11450446}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -821,6 +821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponLayerName: Weapon
   weaponHolder: {fileID: 470462}
+  isReloading: 0
   primaryWeapon:
     name: Blaster
     damage: 19
@@ -839,8 +840,6 @@ MonoBehaviour:
     bullets: 20
     reloadTime: 1
     graphics: {fileID: 1000013161418402, guid: ba52f180ce5a99f44b77703b3240ca13, type: 2}
-  isReloading: 0
-  isFired: 0
 --- !u!114 &11468604
 MonoBehaviour:
   m_ObjectHideFlags: 1

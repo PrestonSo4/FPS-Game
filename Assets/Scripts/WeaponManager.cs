@@ -3,25 +3,23 @@ using UnityEngine.Networking;
 using System.Collections;
 
 public class WeaponManager : NetworkBehaviour {
-
+    [Header("Variables")]
 	[SerializeField]
 	private string weaponLayerName = "Weapon";
 
 	[SerializeField]
 	private Transform weaponHolder;
 
+    public bool isReloading = false;
+    [Header("Weapons")]
 	[SerializeField]
 	private PlayerWeapon primaryWeapon;
-
     [SerializeField]
     private PlayerWeapon secondaryWeapon;
 
 	private PlayerWeapon currentWeapon;
 	private WeaponGraphics currentGraphics;
 
-    public bool isReloading = false;
-
-    public bool isFired = false;
 
 	void Start ()
 	{
@@ -97,7 +95,7 @@ public class WeaponManager : NetworkBehaviour {
     //{
     //    if (Input.GetKeyDown(KeyCode.Alpha1) && currentWeapon != primaryWeapon)
     //    {
-    //        Destroy(currentGraphics);
+    //        //Destroy(currentGraphics);
     //        EquipWeapon(primaryWeapon);
     //        Debug.Log("equped primary weapon");
     //    }
