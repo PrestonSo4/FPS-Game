@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPS-Game.CSharp.Plugins", "FPS-Game.CSharp.Plugins.csproj", "{3BF60685-C3C7-848D-73BD-3F548A656D27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPS-Game.CSharp", "FPS-Game.CSharp.csproj", "{8E124910-F9D9-A86F-6385-E33D326717FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPS-Game.CSharp.Editor", "FPS-Game.CSharp.Editor.csproj", "{F7F222DB-AA65-1650-8D32-B1ECC27ED1D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BF60685-C3C7-848D-73BD-3F548A656D27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BF60685-C3C7-848D-73BD-3F548A656D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BF60685-C3C7-848D-73BD-3F548A656D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BF60685-C3C7-848D-73BD-3F548A656D27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E124910-F9D9-A86F-6385-E33D326717FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E124910-F9D9-A86F-6385-E33D326717FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E124910-F9D9-A86F-6385-E33D326717FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E124910-F9D9-A86F-6385-E33D326717FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7F222DB-AA65-1650-8D32-B1ECC27ED1D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7F222DB-AA65-1650-8D32-B1ECC27ED1D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7F222DB-AA65-1650-8D32-B1ECC27ED1D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7F222DB-AA65-1650-8D32-B1ECC27ED1D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
