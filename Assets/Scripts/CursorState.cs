@@ -4,8 +4,6 @@ using UnityEngine.Networking;
 public class CursorState : NetworkBehaviour
 {
 
-    public static bool isCursorLocked = true;
-
     // Update is called once per frame
     void Update()
     {
@@ -13,26 +11,6 @@ public class CursorState : NetworkBehaviour
         {
             //CheckForInput();
             CheckIfCursorShouldBeLocked();
-        }
-    }
-
-    void ToogleCursorState()
-    {
-        if (PauseMenu.IsOn)
-        {
-            isCursorLocked = false;
-        }
-        else
-        {
-            isCursorLocked = true;
-        }
-    }
-
-    void CheckForInput()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            ToogleCursorState();
         }
     }
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Collections;
 
 [RequireComponent (typeof (WeaponManager))]
 public class PlayerShoot : NetworkBehaviour {
@@ -14,7 +15,7 @@ public class PlayerShoot : NetworkBehaviour {
 
 	private PlayerWeapon currentWeapon;
 	private WeaponManager weaponManager;
-
+    Animation anim;
 	void Start ()
 	{
 		if (cam == null)
@@ -29,7 +30,6 @@ public class PlayerShoot : NetworkBehaviour {
 	void Update ()
 	{
 		currentWeapon = weaponManager.GetCurrentWeapon();
-
 		if (PauseMenu.IsOn)
 			return;
 
@@ -44,6 +44,7 @@ public class PlayerShoot : NetworkBehaviour {
 
 		if (currentWeapon.fireRate <= 0f)
 		{
+            
 			if (Input.GetButtonDown("Fire1"))
 			{
 				Shoot();
@@ -62,6 +63,7 @@ public class PlayerShoot : NetworkBehaviour {
 
 
 	}
+
 
 	//Is called on the server when a player shoots
 	[Command]
@@ -98,7 +100,7 @@ public class PlayerShoot : NetworkBehaviour {
 	[Client]
 	void Shoot ()
 	{
-		if (!isLocalPlayer && weaponManager.isReloading)
+		if (!isLocalPlayer || weaponManager.isReloading)
 		{
 			return;
 		}
@@ -127,7 +129,10 @@ public class PlayerShoot : NetworkBehaviour {
 			// We hit something, call the OnHit method on the server
 			CmdOnHit(_hit.point, _hit.normal);
 		}
-
+        if(currentWeapon.bullets <= 0)
+        {
+            weaponManager.Reload();
+        }
 	}
 
 	[Command]

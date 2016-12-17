@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(ConfigurableJoint))]
@@ -8,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 	[SerializeField]
 	private float speed = 5f;
 	[SerializeField]
-	private float lookSensitivity = 3f;
+	public float lookSensitivity = 3f;
 
 	[SerializeField]
 	private float thrusterForce = 1000f;
@@ -49,21 +50,25 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-        if (PauseMenu.IsOn) {
-
+        if (PauseMenu.IsOn)
+        {
             if (Cursor.lockState != CursorLockMode.None)
                 Cursor.lockState = CursorLockMode.None;
 
             motor.Move(Vector3.zero);
             motor.Rotate(Vector3.zero);
             motor.RotateCamera(0f);
+            motor.ApplyThruster(Vector3.zero);
 
             return;
         }
-        if (Cursor.lockState != CursorLockMode.Locked)
+
+        if(Cursor.lockState != CursorLockMode.Locked)
         {
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
+
 
 		//Setting target position for spring
 		//This makes the physics act right when it comes to

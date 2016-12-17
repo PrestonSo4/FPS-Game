@@ -19,6 +19,12 @@ public class Player : NetworkBehaviour {
     [SyncVar]
     private int currentHealth;
 
+    bool recentlyTakenDamage = true;
+    bool regenHealth = false;
+    float damageTimer = 0;
+    float regenTime = 0.5f;
+    int regenPerSec = 1;
+
     public float GetHealthPct()
     {
         return (float)currentHealth / maxHealth;
@@ -81,17 +87,6 @@ public class Player : NetworkBehaviour {
 		SetDefaults();
 	}
 
-	//void Update()
-	//{
-	//	if (!isLocalPlayer)
-	//		return;
-
-	//	if (Input.GetKeyDown(KeyCode.K))
-	//	{
-	//		RpcTakeDamage(99999);
-	//	}
-	//}
-
 	[ClientRpc]
     public void RpcTakeDamage (int _amount, string _sourceID)
     {
@@ -101,6 +96,8 @@ public class Player : NetworkBehaviour {
         currentHealth -= _amount;
 
         Debug.Log(transform.name + " now has " + currentHealth + " health.");
+
+        recentlyTakenDamage = true;
 
 		if (currentHealth <= 0)
 		{

@@ -3,20 +3,23 @@ using UnityEngine.Networking;
 using System.Collections;
 
 public class WeaponManager : NetworkBehaviour {
-
+    [Header("Variables")]
 	[SerializeField]
 	private string weaponLayerName = "Weapon";
 
 	[SerializeField]
 	private Transform weaponHolder;
 
+    public bool isReloading = false;
+    [Header("Weapons")]
 	[SerializeField]
 	private PlayerWeapon primaryWeapon;
+    [SerializeField]
+    private PlayerWeapon secondaryWeapon;
 
 	private PlayerWeapon currentWeapon;
 	private WeaponGraphics currentGraphics;
 
-    public bool isReloading = false;
 
 	void Start ()
 	{
@@ -33,7 +36,7 @@ public class WeaponManager : NetworkBehaviour {
 		return currentGraphics;
 	}
 
-	void EquipWeapon (PlayerWeapon _weapon)
+	public void EquipWeapon (PlayerWeapon _weapon)
 	{
 		currentWeapon = _weapon;
 
@@ -64,7 +67,7 @@ public class WeaponManager : NetworkBehaviour {
 
         CmdOnReload();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(currentWeapon.reloadTime);
 
         currentWeapon.bullets = currentWeapon.maxBullets;
 
@@ -83,8 +86,28 @@ public class WeaponManager : NetworkBehaviour {
         Animator anim = currentGraphics.GetComponent<Animator>();
         if(anim != null)
         {
+            anim.SetFloat("reloadTime", currentWeapon.reloadTime);
             anim.SetTrigger("Reload");
         }
     }
+
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Alpha1) && currentWeapon != primaryWeapon)
+    //    {
+    //        //Destroy(currentGraphics);
+    //        EquipWeapon(primaryWeapon);
+    //        Debug.Log("equped primary weapon");
+    //    }
+
+    //    if (Input.GetKeyDown(KeyCode.Alpha2) && currentWeapon != secondaryWeapon)
+    //    {
+    //        Destroy(currentGraphics);
+    //        EquipWeapon(secondaryWeapon);
+    //        Debug.Log("equped secondary weapon");
+    //    }
+
+
+    //}
 
 }
