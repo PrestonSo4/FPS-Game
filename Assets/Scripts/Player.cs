@@ -21,8 +21,8 @@ public class Player : NetworkBehaviour {
 
     bool recentlyTakenDamage = true;
     bool regenHealth = false;
-    float damageTimer = 0;
-    float regenTime = 0.5f;
+    //float damageTimer = 0;
+    //float regenTime = 0.5f;
     int regenPerSec = 1;
 
     public float GetHealthPct()

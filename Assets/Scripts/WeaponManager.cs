@@ -17,6 +17,7 @@ public class WeaponManager : NetworkBehaviour {
     [SerializeField]
     private PlayerWeapon secondaryWeapon;
 
+    [SerializeField]
 	private PlayerWeapon currentWeapon;
 	private WeaponGraphics currentGraphics;
 
@@ -36,6 +37,7 @@ public class WeaponManager : NetworkBehaviour {
 		return currentGraphics;
 	}
 
+     
 	public void EquipWeapon (PlayerWeapon _weapon)
 	{
 		currentWeapon = _weapon;
@@ -51,6 +53,7 @@ public class WeaponManager : NetworkBehaviour {
 			Util.SetLayerRecursively(_weaponIns, LayerMask.NameToLayer(weaponLayerName));
 
 	}
+
 
     public void Reload()
     {
@@ -91,23 +94,24 @@ public class WeaponManager : NetworkBehaviour {
         }
     }
 
-    //void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Alpha1) && currentWeapon != primaryWeapon)
-    //    {
-    //        //Destroy(currentGraphics);
-    //        EquipWeapon(primaryWeapon);
-    //        Debug.Log("equped primary weapon");
-    //    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1) && currentWeapon != primaryWeapon)
+        {
+            Debug.Log(weaponHolder.transform.GetChild(0).name);
+            Destroy(weaponHolder.transform.GetChild(0).gameObject);
+            EquipWeapon(primaryWeapon);
+            Debug.Log("equiped primary weapon");
+        }
 
-    //    if (Input.GetKeyDown(KeyCode.Alpha2) && currentWeapon != secondaryWeapon)
-    //    {
-    //        Destroy(currentGraphics);
-    //        EquipWeapon(secondaryWeapon);
-    //        Debug.Log("equped secondary weapon");
-    //    }
+        if (Input.GetKeyDown(KeyCode.Alpha2) && currentWeapon != secondaryWeapon)
+        {
+            Destroy(weaponHolder.transform.GetChild(0).gameObject);
+            EquipWeapon(secondaryWeapon);
+            Debug.Log("equiped secondary weapon");
+        }
 
 
-    //}
+    }
 
 }

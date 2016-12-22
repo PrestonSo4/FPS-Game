@@ -151,6 +151,7 @@
     <None Include="Assets\Barril pack\ReadMe.txt" />
     <None Include="Assets\Basic Metal Texture Pack\readme.txt" />
     <None Include="Assets\DatabaseControl\Data\Resources\data.txt" />
+    <None Include="Assets\Models\Guns\README.txt" />
     <None Include="Assets\Models\structures\Stonewall\Textures\READ ME.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />

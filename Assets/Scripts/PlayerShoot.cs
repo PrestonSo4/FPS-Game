@@ -113,7 +113,7 @@ public class PlayerShoot : NetworkBehaviour {
 
         currentWeapon.bullets--;
 
-        Debug.Log(currentWeapon.bullets);
+        //Debug.Log(currentWeapon.bullets);
 
 		//We are shooting, call the OnShoot method on the server
 		CmdOnShoot();
